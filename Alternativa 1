@@ -1,0 +1,89 @@
+Algoritmo Sistema_de_facturacion1
+	
+	Definir Arroz,Azucar,Sal,Cafe,Aceite,Jabon,Champu,Desodorante como Caracter
+	Definir cantidadproducto1,cantidadproducto2,cantidadproducto3,cantidadproducto4,cantidadproducto5,cantidadproducto6,cantidadproducto7,cantidadproducto8 como Entero
+	Definir Total1,Total2,Total3,Total4,Total5,Total6,Total7,Total8 Como Entero
+	Definir Subtotal Como Entero
+	Definir Descuento Como Entero
+	Definir Totalfactura como Entero
+	//variables
+	Metodopago=''
+	
+	// ===== SISTEMA DE FACTURA =====
+	Escribir '=============SISTEMA FACTURACION ALEGRIAS S.A.S==============='
+	Escribir 'Buen d�a, ingrese su nombre de usuario'
+	Leer Nombre
+	Escribir'�Hola Bienvenid@! ' Nombre ' al sistema de facturaci�n del supermercado ALEGRIAS S.A.S'
+	Escribir 'Ingrese el nombre del producto 1 (Arroz)'
+	Leer Arroz
+	Escribir 'Ingrese la cantidad del producto 1'
+	Leer cantidadproducto1
+	Escribir 'Ingrese el nombre del producto 2 (Azucar)'
+	Leer Azucar
+	Escribir 'Ingrese la cantidad del producto 2'
+	Leer cantidadproducto2
+	Escribir 'Ingrese el nombre del producto 3 (Sal)'
+	Leer Sal
+	Escribir 'Ingrese la cantidad del producto 3'
+	Leer cantidadproducto3
+	Escribir 'Ingrese el nombre del producto 4 (Cafe)'
+	Leer Cafe
+	Escribir 'Ingrese la cantidad del producto 4'
+	Leer cantidadproducto4
+	Escribir 'Ingrese el nombre del producto 5 (Aceite)'
+	Leer Aceite
+	Escribir 'Ingrese la cantidad del producto 5'
+	Leer cantidadproducto5
+	Escribir 'Ingrese el nombre del producto 6 (Jabon)'
+	Leer Jabon
+	Escribir 'Ingrese la cantidad del producto 6'
+	Leer cantidadproducto6
+	Escribir 'Ingrese el nombre del producto 7 (Champu)'
+	Leer Champu
+	Escribir 'Ingrese la cantidad del producto 7'
+	Leer cantidadproducto7
+	Escribir 'Ingrese el nombre del producto 8 (Desodorante)'
+	Leer Desodorante
+	Escribir 'Ingrese la cantidad del producto 8'
+	Leer cantidadproducto8
+	
+	Total1<-(cantidadproducto1*5000)
+	Total2<-(cantidadproducto2*3500)
+	Total3<-(cantidadproducto3*1500)
+	Total4<-(cantidadproducto4*10000)
+	Total5<-(cantidadproducto5*20000)
+	Total6<-(cantidadproducto6*25000)
+	Total7<-(cantidadproducto7*14500)
+	Total8<-(cantidadproducto8*24500)
+	
+	Subtotal =(Total1+Total2+Total3+Total4+Total5+Total6+Total7+Total8)
+	
+ Si (Subtotal > 50000) entonces
+		Descuento <- (Subtotal * 0.05)
+	SiNo
+		Descuento <- 0
+	FinSi
+	
+	Totalfactura = (Subtotal - Descuento)
+	
+	Escribir "=== RESUMEN DE FACTURA ==="
+	codigoTransaccion = Aleatorio(100000,999999)
+	Escribir "C�digo de transacci�n: " codigoTransaccion
+	
+	Escribir "M�todo de pago: " 
+	Leer Metodopago
+	
+	Escribir 'Valor a pagar por ' Arroz ' es: ' Total1
+	Escribir 'Valor a pagar por ' Azucar ' es: ' Total2
+	Escribir 'Valor a pagar por ' Sal ' es: ' Total3
+	Escribir 'Valor a pagar por ' Cafe ' es: ' Total4
+	Escribir 'Valor a pagar por ' Aceite ' es: ' Total5
+	Escribir 'Valor a pagar por ' Jabon ' es: ' Total6
+	Escribir 'Valor a pagar por ' Champu ' es: ' Total7
+	Escribir 'Valor a pagar por ' Desodorante ' es: ' Total8
+	Escribir 'El subtotal fue de: ' Subtotal
+	Escribir 'El descuento fue de: ' Descuento
+	Escribir "Valor total facturado: ' Totalfactura
+	
+	Escribir "Factura realizada con �xito"
+FinAlgoritmo
