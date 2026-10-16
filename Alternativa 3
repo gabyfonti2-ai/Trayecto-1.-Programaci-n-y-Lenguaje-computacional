@@ -1,0 +1,247 @@
+Algoritmo Sistema_de_facturacion3
+	Definir Producto1,Producto2,Producto3,Producto4,Producto5,Producto6,Producto7,Producto8 como Cadena
+	Definir Metodopago, Nombre como Cadena
+	Definir precioArroz,precioAzucar,precioSal,precioCafe,precioAceite,precioJabon,precioChampu,precioDesodorante como Entero
+	Definir cantidadArroz,cantidadAzucar,cantidadSal,cantidadCafe,cantidadAceite,cantidadJabon,cantidadChampu,cantidadDesodorante como Entero
+	Definir stockArroz,stockAzucar,stockSal,stockCafe,stockAceite,stockJabon,stockChampu,stockDesodorante como Entero
+	Definir TotalArroz,TotalAzucar,TotalSal,TotalCafe,TotalAceite,TotalJabon,TotalChampu,TotalDesodorante Como Entero
+	Definir Subtotal,Descuento,Menu,Totalfactura, Totalproducto como Entero
+	Definir ventaValida Como Logico
+	//Productos
+	Producto1='Arroz'
+	Producto2='Azucar'
+	Producto3='Sal'
+	Producto4='Cafe'
+	Producto5='Aceite'
+	Producto6='Jabon'
+	Producto7='Champu'
+	Producto8='Desodorante' 
+	//Inventario(Stock de productos)
+	stockArroz=50
+	stockAzucar=45
+	stockSal=60
+	stockCafe=55
+	stockAceite=70
+	stockJabon=65
+	stockChampu=80
+	stockDesodorante=75
+	//Validez de la venta
+	ventaValida<-Verdadero
+	//Precios
+	precioArroz=5000
+	precioAzucar=3500
+	precioSal=1500
+	precioCafe=10000
+	precioAceite=20000
+	precioJabon=25000
+	precioChampu=14500
+	precioDesodorante=24500
+	// ===== SISTEMA DE FACTURA =====
+	Escribir '=============SISTEMA FACTURACION DE ALEGRIAS S.A.S==============='
+	Escribir 'Ingrese su nombre de usuario'
+	Leer Nombre
+	Repetir
+	Escribir'�Hola ' Nombre ', Bienvenid@ al sistema de facturaci�n del supermercado ALEGRIAS S.A.S!'
+	Escribir '�Que operacion desea realizar?'
+	Escribir '1. CONSULTAR INVENTARIO'
+	Escribir '2. FACTURAR'
+	Escribir '3. SALIR DE LA SESION'
+	Leer Menu
+	
+	Segun Menu Hacer
+		1://===========INVENTARIO================
+			Escribir 'Actualmente contamos con 8 productos en el supermercado ALEGRIAS S.A.S'
+			Escribir 'El stock por producto es el siguiente: '
+			Escribir 'El producto ' Producto1 ' tiene un stock de-> ' stockArroz ' Unidades'
+			Escribir 'El producto ' Producto2 ' tiene un stock de-> ' stockAzucar ' Unidades'
+			Escribir 'El producto ' Producto3 ' tiene un stock de-> ' stockSal ' Unidades'
+			Escribir 'El producto ' Producto4 ' tiene un stock de-> ' stockCafe ' Unidades'
+			Escribir 'El producto ' Producto5 ' tiene un stock de-> ' stockAceite ' Unidades'
+			Escribir 'El producto ' Producto6 ' tiene un stock de-> ' stockJabon ' Unidades'
+			Escribir 'El producto ' Producto7 ' tiene un stock de-> ' stockChampu ' Unidades'
+			Escribir 'El producto ' Producto8 ' tiene un stock de-> ' stockDesodorante ' Unidades'
+			Totalproducto =((stockArroz)+(stockAzucar)+(stockSal)+(stockCafe)+(stockAceite)+(stockJabon)+(stockChampu)+(stockDesodorante))
+			Escribir 'El stock total de productos es ' Totalproducto ' Unidades'
+			Escribir 'Ahora puedes facturar o cerrar la sesi�n'
+			Escribir '===========FIN CONSULTA INVENTARIO=========='
+			Escribir '---->PARA SALIR DEL SISTEMA SELECCIONE 3<----'
+		2://===========FACTURACION===============
+			ventaValida <- Verdadero
+			Subtotal <- 0
+			Descuento <- 0
+			TotalFactura <- 0
+			
+			Escribir'-1kg de ' Producto1 ' cuesta $' precioArroz 
+			Escribir'-1kg de ' Producto2 ' cuesta $' precioAzucar 
+			Escribir'-1lb de ' Producto3 ' cuesta $' precioSal 
+			Escribir'-1lb de ' Producto4 ' cuesta $' precioCafe
+			Escribir'-3L de ' Producto5 ' cuesta $' precioAceite
+			Escribir'-1L de ' Producto6 ' cuesta $' precioJabon
+			Escribir'-1.5L de ' Producto7 ' cuesta $' precioChampu
+			Escribir'-45g de ' Producto8 ' cuesta $' precioDesodorante
+			Escribir 'Ingrese la cantidad de los productos: ' 
+			Escribir Producto1, ":"
+			Leer cantidadArroz
+			Si cantidadArroz < 0 O cantidadArroz > stockArroz Entonces
+				Escribir "Cantidad invalida o inventario insuficiente."
+				ventaValida <- Falso
+			FinSi
+			Escribir Producto2, ":"
+			Leer cantidadAzucar
+			Si cantidadAzucar < 0 O cantidadAzucar > stockAzucar Entonces
+				Escribir "Cantidad invalida o inventario insuficiente."
+				ventaValida <- Falso
+			FinSi
+			Escribir Producto3, ":"
+			Leer cantidadSal
+			Si cantidadSal < 0 O cantidadSal > stockSal Entonces
+				Escribir "Cantidad invalida o inventario insuficiente."
+				ventaValida <- Falso
+			FinSi
+			Escribir Producto4, ":"
+			Leer cantidadCafe
+			Si cantidadCafe < 0 O cantidadCafe > stockCafe Entonces
+				Escribir "Cantidad invalida o inventario insuficiente."
+				ventaValida <- Falso
+			FinSi
+			Escribir Producto5, ":"
+			Leer cantidadAceite
+			Si cantidadAceite < 0 O cantidadAceite > stockAceite Entonces
+				Escribir "Cantidad invalida o inventario insuficiente."
+				ventaValida <- Falso
+			FinSi
+			Escribir Producto6, ":"
+			Leer cantidadJabon
+			Si cantidadJabon < 0 O cantidadJabon > stockJabon Entonces
+				Escribir "Cantidad invalida o inventario insuficiente."
+				ventaValida <- Falso
+			FinSi
+			Escribir Producto7, ":"
+			Leer cantidadChampu
+			Si cantidadChampu < 0 O cantidadChampu > stockChampu Entonces
+				Escribir "Cantidad invalida o inventario insuficiente."
+				ventaValida <- Falso
+			FinSi
+			Escribir Producto8, ":"
+			Leer cantidadDesodorante
+			Si cantidadDesodorante < 0 O cantidadDesodorante > stockDesodorante Entonces
+				Escribir "Cantidad invalida o inventario insuficiente."
+				ventaValida <- Falso
+			FinSi
+			Si ventaValida = Verdadero Entonces 
+			Escribir '=======SUBTOTAL========'
+			TotalArroz<-(cantidadArroz*precioArroz)
+			TotalAzucar<-(cantidadAzucar*precioAzucar)
+			TotalSal<-(cantidadSal*precioSal)
+			TotalCafe<-(cantidadCafe*precioCafe)
+			TotalAceite<-(cantidadAceite*precioAceite)
+			TotalJabon<-(cantidadJabon*precioJabon)
+			TotalChampu<-(cantidadChampu*precioChampu)
+			TotalDesodorante<-(cantidadDesodorante*precioDesodorante)
+			Subtotal =(TotalArroz+TotalAzucar+TotalSal+TotalCafe+TotalAceite+TotalJabon+TotalChampu+TotalDesodorante)
+			Escribir 'Valor a pagar por ' Producto1 ' es: $' TotalArroz
+			Escribir 'Valor a pagar por ' Producto2 ' es: $' TotalAzucar
+			Escribir 'Valor a pagar por ' Producto3 ' es: $' TotalSal
+			Escribir 'Valor a pagar por ' Producto4 ' es: $' TotalCafe
+			Escribir 'Valor a pagar por ' Producto5 ' es: $' TotalAceite
+			Escribir 'Valor a pagar por ' Producto6 ' es: $' TotalJabon
+			Escribir 'Valor a pagar por ' Producto7 ' es: $' TotalChampu
+			Escribir 'Valor a pagar por ' Producto8 ' es: $' TotalDesodorante
+			Escribir 'El subtotal es de: $' Subtotal
+			Escribir'=========DESCUENTO============='
+			Si (Subtotal > 50000) entonces
+				Descuento <- (Subtotal * 0.10)
+				Escribir 'El descuento fue de(10% compras superiores a $50000): $' Descuento
+			SiNo
+				Descuento <- 0
+				Escribir 'No aplica para descuento'
+			FinSi
+			Totalfactura = (Subtotal - Descuento)
+			Escribir "======= RESUMEN DE LA FACTURA ======="
+			Escribir Producto1, ": $", TotalArroz
+			Escribir Producto2, ": $", TotalAzucar
+			Escribir Producto3, ": $", TotalSal
+			Escribir Producto4, ": $", TotalCafe
+			Escribir Producto5, ": $", TotalAceite
+			Escribir Producto6, ": $", TotalJabon
+			Escribir Producto7, ": $", TotalChampu
+			Escribir Producto8, ": $", TotalDesodorante
+			Escribir "Subtotal: $", Subtotal
+			Escribir "Descuento: $", Descuento
+			Escribir "Total a pagar: $", TotalFactura
+			Escribir "======= METODO DE PAGO ======="
+			Escribir "a. Transferencia por aplicacion"
+			Escribir "b. Tarjeta debito/credito"
+			Escribir "c. Efectivo"
+			Escribir "d. Cancelar compra"
+			Leer MetodoPago
+			
+			Segun MetodoPago Hacer
+				
+				"a":
+					Escribir "Pago seleccionado: Transferencia por aplicacion"
+					
+				"b":
+					Escribir "Pago seleccionado: Tarjeta debito/credito"
+					
+				"c":
+					Escribir "Pago seleccionado: Efectivo"
+					
+				"d":
+					Escribir "Compra cancelada. No se modificara el inventario."
+					
+				De Otro Modo:
+					Escribir "Metodo de pago invalido. Venta no completada."
+					
+			FinSegun
+			Si MetodoPago = "a" O MetodoPago = "b" O MetodoPago = "c" Entonces
+				
+				CodigoTransaccion <- Aleatorio(100000, 9999999)
+				// Actualizar inventario unicamente con pago confirmado
+				stockArroz <- stockArroz - cantidadArroz
+				stockAzucar <- stockAzucar - cantidadAzucar
+				stockSal <- stockSal - cantidadSal
+				stockCafe <- stockCafe - cantidadCafe
+				stockAceite <- stockAceite - cantidadAceite
+				stockJabon <- stockJabon - cantidadJabon
+				stockChampu <- stockChampu - cantidadChampu
+				stockDesodorante <- stockDesodorante - cantidadDesodorante
+				
+				Escribir ""
+				Escribir "======= VENTA COMPLETADA ======="
+				Escribir "Codigo de transaccion: ", CodigoTransaccion
+				Escribir "Total pagado: $", TotalFactura
+				Escribir "Factura realizada con exito."
+				
+				Escribir ""
+				Escribir "======= INVENTARIO ACTUALIZADO ======="
+				Escribir Producto1, ": ", stockArroz, " unidades"
+				Escribir Producto2, ": ", stockAzucar, " unidades"
+				Escribir Producto3, ": ", stockSal, " unidades"
+				Escribir Producto4, ": ", stockCafe, " unidades"
+				Escribir Producto5, ": ", stockAceite, " unidades"
+				Escribir Producto6, ": ", stockJabon, " unidades"
+				Escribir Producto7, ": ", stockChampu, " unidades"
+				Escribir Producto8, ": ", stockDesodorante, " unidades"
+				
+			SiNo
+				Escribir "La venta no fue completada."
+				Escribir "El inventario permanece sin cambios."
+			FinSi
+			
+		SiNo
+			Escribir ""
+			Escribir "======= VENTA RECHAZADA ======="
+			Escribir "Revise las cantidades ingresadas."
+			Escribir "El inventario permanece sin cambios."
+			Escribir '---->PARA SALIR DEL SISTEMA SELECCIONE 3<----'
+		FinSi
+		3://===========CERRAR SESION===================
+			Escribir ""
+			Escribir 'Sesion cerrada. Gracias por utilizar el sistema.'
+
+		De Otro Modo:
+			Escribir "Opcion invalida. Seleccione 1, 2 o 3."
+	FinSegun
+    Hasta que Menu =3
+FinAlgoritmo
